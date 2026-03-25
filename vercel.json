@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "functions": {
+    "api/telegram-webhook.ts": {
+      "maxDuration": 300,
+      "memory": 3008
+    },
+    "api/start-booking.ts": {
+      "maxDuration": 300,
+      "memory": 3008
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/start-booking",
+      "schedule": "0 9 * * 1-5"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/telegram-webhook",
+      "methods": ["POST"],
+      "dest": "/api/telegram-webhook"
+    },
+    {
+      "src": "/api/start-booking",
+      "methods": ["GET", "POST"],
+      "dest": "/api/start-booking"
+    }
+  ]
+}
