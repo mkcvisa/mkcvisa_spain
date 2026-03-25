@@ -35,12 +35,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const chatId = String(message.chat.id)
   const text   = message.text.trim()
 
-  // Vercel'e hemen 200 dön, işlemi arka planda çalıştır
-  res.status(200).json({ ok: true })
-
-  await processMessage(chatId, text).catch((err) => {
+  // Önce işlemi tamamla, sonra 200 dön
+  // (Vercel: res.json() sonrası kod çalışmıyor)
+  try {
+    await processMessage(chatId, text)
+  } catch (err) {
     console.error('[webhook]', err)
-  })
+  }
+
+  return res.status(200).json({ ok: true })
 }
 
 async function processMessage(chatId: string, text: string): Promise<void> {
