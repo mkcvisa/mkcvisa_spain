@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "tsc --noEmit",
+  "outputDirectory": ".",
   "functions": {
     "api/telegram-webhook.ts": {
       "maxDuration": 60,
