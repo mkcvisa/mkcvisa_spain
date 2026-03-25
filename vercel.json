@@ -2,12 +2,12 @@
   "version": 2,
   "functions": {
     "api/telegram-webhook.ts": {
-      "maxDuration": 300,
-      "memory": 3008
+      "maxDuration": 60,
+      "memory": 1024
     },
     "api/start-booking.ts": {
-      "maxDuration": 300,
-      "memory": 3008
+      "maxDuration": 60,
+      "memory": 1024
     }
   },
   "crons": [
