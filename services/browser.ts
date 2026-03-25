@@ -46,7 +46,7 @@ async function launchBrowser(): Promise<{ browser: Browser; ctx: BrowserContext 
   const browser = await playwright.launch({
     args: chromium.args,
     executablePath,
-    headless: !!chromium.headless,
+    headless: true,
   })
   const ctx = await browser.newContext({
     viewport: { width: 1280, height: 900 },
@@ -64,7 +64,7 @@ async function launchWithState(
   const browser = await playwright.launch({
     args: chromium.args,
     executablePath,
-    headless: !!chromium.headless,
+    headless: true,
   })
   const ctx = await browser.newContext({
     viewport: { width: 1280, height: 900 },

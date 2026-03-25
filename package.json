@@ -8,9 +8,9 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "@sparticuz/chromium": "^123.0.1",
+    "@sparticuz/chromium": "^131.0.1",
     "@supabase/supabase-js": "^2.43.4",
-    "playwright-core": "^1.44.0",
+    "playwright-core": "^1.49.1",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
